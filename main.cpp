@@ -1,5 +1,11 @@
+// Data Structures 2
+// Eli Levin
+// Assignment 5 - graphs
+// implement a graph a model with BFS algorithm
+
 #include "graph.h"
 using namespace std;
+
 int main() {
     try {
         string v1, v2, name;
@@ -57,14 +63,15 @@ int main() {
                 case 6:
                     cout << "enter the v you want to its followers\n";
                     cin >> v1;
-                    g.print_neighbors_to(v1);
+                    if (!g.print_neighbors_to(v1))
+                        cout << "ERROR";
                     break;
                 case 7:
                     cout << "enter writer\n";
                     cin >> v1;
-                    g.print_reachable_from(v1);
+                    if (!g.print_reachable_from(v1))
+                        cout << "ERROR";
                     break;
-
                 case 8:
                     cout << "The graph:\n";
                     g.print();

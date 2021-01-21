@@ -5,19 +5,12 @@ Vertex::Vertex(std::string key) : key(key) {
     color = white;
 }
 
-Vertex::~Vertex() {
-    // no mem allcoation happening in class
-}
+Vertex::~Vertex() {}
 
 bool Vertex::operator==(const Vertex& v) const {
     return key == v.key;
 }
 
-bool Vertex::operator!=(const Vertex& v) const {
-    return key != v.key;
-}
-
-//delete this
 std::string Vertex::get_key() const {
     return key;
 }
@@ -49,15 +42,10 @@ bool Vertex::is_neighbor(const Vertex& v) {
     return false;
 }
 
- int Vertex::n_neighbors() {
+int Vertex::n_neighbors() {
     return edges.size();
 }
 
-// bool Vertex::path_exists(Vertex* v) {  // called destinationExists in docs...?
-//    // do some algorithm
-//}
-
 void Vertex::print() {
-    // what format do they want?
-    std::cout << key << std::endl;
+    std::cout << key;
 }
