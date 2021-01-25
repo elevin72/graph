@@ -29,7 +29,6 @@ bool Graph::remove_vertex(const std::string& s) {
         for (std::list<Edge>::iterator it = vertices[s].backwards_edges.begin();
              it != vertices[s].backwards_edges.end();
              it++) {
-            std::string deleteme = it->dest->key;
             it->dest->remove_edge(temp_edge);
         }
         // finally delete the vertex
